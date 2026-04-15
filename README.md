@@ -1,9 +1,6 @@
 # MiniGPT
 
 <p align="center">
-  <a href="https://github.com/turancannb02/minigpt">
-    <img src="https://img.shields.io/github/stars/turancannb02/minigpt?style=plastic&logo=github" alt="GitHub Stars">
-  </a>
   <img src="https://img.shields.io/badge/Language-Python-blue?style=plastic&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Framework-PyTorch-EE4C2C?style=plastic&logo=pytorch&logoColor=white" alt="PyTorch">
   <img src="https://img.shields.io/badge/API-FastAPI-009688?style=plastic&logo=fastapi&logoColor=white" alt="FastAPI">
@@ -14,6 +11,10 @@
 
 A minimal GPT-style language model trained from scratch on TinyStories.
 The goal is simple: build and understand the full pipeline yourself, from tokenizer training to inference.
+
+## What This Is
+
+I built this project to understand the full training lifecycle of a small language model without relying on high-level training frameworks. The focus was to implement and debug each core layer directly, including byte-level tokenization, autoregressive transformer training, checkpointing, and inference serving. For research-oriented work, this gives a transparent baseline where behavior and bottlenecks are easy to inspect and extend.
 
 ## Features
 
@@ -99,6 +100,16 @@ curl -X POST "http://localhost:8000/generate" \
     "max_tokens": 100,
     "temperature": 0.8
   }'
+```
+
+## Sample Output
+
+Prompt: `Once upon a time`
+
+```text
+Once upon a time there was a little boy named Tom.
+He had a red ball and he liked to play in the garden.
+One day he saw a small bird and said hello to it.
 ```
 
 ## Training Arguments
