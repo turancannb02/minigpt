@@ -55,3 +55,6 @@ __pycache__/
 *.pyc
 .venv/
 
+data_backup/
+checkpoints_backup/.DS_Store
+.DS_Store
