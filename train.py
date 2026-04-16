@@ -12,7 +12,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from data import prepare_dataset
+from data_fast_tokenizer import prepare_dataset
 from model import GPT, GPTConfig, get_model_config
 
 

@@ -8,14 +8,14 @@ from pathlib import Path
 
 import torch
 
-from data import BPETokenizer
+from data_fast_tokenizer import BPETokenizer
 from model import GPT
 
 
 def load_model(checkpoint_path: str, device: torch.device):
     """Load a trained model from checkpoint."""
     print(f"Loading checkpoint from {checkpoint_path}...")
-    checkpoint = torch.load(checkpoint_path, map_location=device)
+    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
 
     # Load config
     config = checkpoint['config']

@@ -112,6 +112,36 @@ He had a red ball and he liked to play in the garden.
 One day he saw a small bird and said hello to it.
 ```
 
+## Training Results
+
+The model was trained on the TinyStories dataset with custom byte-level BPE tokenization. Below are training curves and comparisons between different model sizes.
+
+### Training & Validation Loss
+
+<div align="center">
+  <img src="docs/train_val_comparison.png" alt="Training vs Validation Loss" width="700">
+  <p><em>Tiny Model (1.5M parameters) - Training vs Validation Loss over 2000 steps</em></p>
+</div>
+
+### Validation Loss Comparison
+
+<div align="center">
+  <img src="docs/validation_loss.png" alt="Validation Loss Comparison" width="700">
+  <p><em>Validation Loss Over Time - Tiny vs Small Model Comparison</em></p>
+</div>
+
+### Model Comparison
+
+<div align="center">
+  <img src="docs/model_comparison.png" alt="Model Comparison" width="600">
+  <p><em>Final Validation Loss by Model Size</em></p>
+</div>
+
+| Model Size | Parameters | Final Val Loss | Training Time |
+|------------|------------|----------------|---------------|
+| Tiny | 1.5M | 3.07 | ~78 min (2000 steps) |
+| Small | 6M | **1.59** | ~269 min (5000 steps) |
+
 ## Training Arguments
 
 | Argument | Default | Description |

@@ -12,7 +12,7 @@ import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-from data import BPETokenizer
+from data_fast_tokenizer import BPETokenizer
 from model import GPT
 
 
@@ -52,7 +52,7 @@ class MiniGPTServer:
 
         # Load model
         print(f"Loading checkpoint from {checkpoint_path}...")
-        checkpoint = torch.load(checkpoint_path, map_location=self.device)
+        checkpoint = torch.load(checkpoint_path, map_location=self.device, weights_only=False)
         self.config = checkpoint['config']
         self.model = GPT(self.config).to(self.device)
         self.model.load_state_dict(checkpoint['model_state_dict'])
